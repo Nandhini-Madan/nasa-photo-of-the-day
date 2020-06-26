@@ -4,9 +4,10 @@ import Photocard from "./Photocard";
 
 export default function Photolist(){
     const [Photos,SetPhotos]=useState([]);
+
     useEffect(()=>{
         axios
-        .get(`https://api.nasa.gov/planetary/apod?api_key=huB3roxjgCMiWUbgRWs8ZQ31HJ8nimqG2qrTrezg`)
+        .get(`https://api.nasa.gov/planetary/apod?api_key=huB3roxjgCMiWUbgRWs8ZQ31HJ8nimqG2qrTrezg&date=2020-06-25`)
         .then(res=>{
             console.log("Result of nasa",res);
             SetPhotos(res.data);
